@@ -172,13 +172,29 @@ h6
 
     color: inherit;
     border-bottom: 3px solid transparent;
-    transition: all .2s linear;
+    position: relative;
 }
 
-.topNavBar  nav  ul  li  a:hover
-{
-    border-bottom: 3px solid #e06567;
+.topNavBar  nav  ul  li  a:hover::after {
+	position: absolute;
+	content: '';
+	display: block;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	background: #e06567;
+	height: 3px;
+	animation: lineSlide .2s;
 }
+
+@keyframes lineSlide {
+	0% {
+		width: 0;
+	}
+	100%{
+		width: 100%;
+	}
+} 
 
 .userCard
 {
