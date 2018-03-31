@@ -3,11 +3,59 @@
 
 <head>
 	<title>王峥的个人简历</title>
-	<link rel="stylesheet" href="./a.css">
+	<link rel="stylesheet" href="./main.css">
 	<script src="//at.alicdn.com/t/font_584946_dxln77t6o7sqbyb9.js"></script>
+	<style>
+	.loading:before,
+	.loading:after
+	{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		width: 0;
+		height: 0;
+		margin: auto;
+
+		content: '';
+		animation: ripple 1.6s linear infinite;
+
+		border-radius: 50%;
+		background: #3d4451;
+	}
+
+	.loading:after
+	{
+		animation-delay: .8s;
+	}
+
+	@keyframes ripple
+	{
+		0%
+		{
+			width: 0;
+			height: 0;
+
+			opacity: 1;
+		}
+		100%
+		{
+			width: 70px;
+			height: 70px;
+
+			opacity: 0;
+		}
+	}
+
+</style>
 </head>
 
 <body>
+	<div id="siteWelcome" class="siteWelcome active">
+		<div class="loading"></div>
+	</div>
 	<div class="topNavBar">
 		<div class="topNavBar-inner clearfix">
 			<a class="logo" href="#" alt="logo">
@@ -197,6 +245,11 @@
 		</div>
 
 	</section>
+	<script>
+		setTimeout(function(){
+			siteWelcome.classList.remove("active")
+		},2500)
+	</script>
 </body>
 
 </html>

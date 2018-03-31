@@ -1,0 +1,42 @@
+.loading:before,
+.loading:after
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+    margin: auto;
+
+    content: '';
+    animation: ripple 3s linear infinite;
+
+    border-radius: 50%;
+    background: #000;
+}
+
+.loading:after
+{
+    animation-delay: 1.5s;
+}
+
+@keyframes ripple
+{
+    0%
+    {
+        width: 0;
+        height: 0;
+
+        opacity: 1;
+    }
+    100%
+    {
+        width: 100px;
+        height: 100px;
+
+        opacity: 0;
+    }
+}
