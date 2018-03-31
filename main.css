@@ -36,19 +36,28 @@ h6
 }
 
 
-.siteWelcome {
-	display: none;
-	position: fixed;
-	top: 0;left: 0;width: 100%;height: 100%;
-	background: white;
-	justify-content: center;
-	-ms-align-items: center;
-	align-items: center;
-	z-index: 1;
+.siteWelcome
+{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    background: white;
+
+    justify-content: center;
+    -ms-align-items: center;
+        align-items: center;
 }
 
-.siteWelcome.active {
-	display: flex;
+.siteWelcome.active
+{
+    display: flex;
 }
 
 .icon
@@ -92,9 +101,20 @@ h6
     position: fixed;
     top: 0;
     left: 0;
+    color: #b7b7b7;
 
     width: 100%;
     padding: 20px 0;
+
+    transition: all .3s linear;
+}
+
+.topNavBar.sticky {
+	background: white;
+	padding: 10px 0;
+	z-index: 1;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);
+	color: #3d4451;
 }
 
 .topNavBar-inner
@@ -106,7 +126,7 @@ h6
 {
     float: right;
 
-    padding-top: 7px;
+    padding-top: 4px;
 }
 
 .topNavBar .logo
@@ -116,7 +136,7 @@ h6
 
     float: left;
 
-    padding-top: 10px;
+    padding-top: 4px;
     padding-bottom: 4px;
 }
 
@@ -142,7 +162,7 @@ h6
 
 .topNavBar  nav  ul  li  a
 {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
 
     display: block;
@@ -150,9 +170,9 @@ h6
     padding-top: 5px;
     padding-bottom: 5px;
 
-    color: #b7b7b7;
-    border-top: 3px solid transparent;
+    color: inherit;
     border-bottom: 3px solid transparent;
+    transition: all .2s linear;
 }
 
 .topNavBar  nav  ul  li  a:hover
