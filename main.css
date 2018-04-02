@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-
 body
 {
     margin: 0;
@@ -34,7 +33,6 @@ h6
 {
     font-weight: normal;
 }
-
 
 .siteWelcome
 {
@@ -93,7 +91,7 @@ h6
 {
     height: 515px;
 
-    background-color: rgba(0,0,0,.4);
+    background-color: rgba(0, 0, 0, .4);
 }
 
 .topNavBar
@@ -101,20 +99,24 @@ h6
     position: fixed;
     top: 0;
     left: 0;
-    color: #b7b7b7;
 
     width: 100%;
     padding: 20px 0;
 
     transition: all .3s linear;
+
+    color: #b7b7b7;
 }
 
-.topNavBar.sticky {
-	background: white;
-	padding: 10px 0;
-	z-index: 1;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);
-	color: #3d4451;
+.topNavBar.sticky
+{
+    z-index: 1;
+
+    padding: 10px 0;
+
+    color: #3d4451;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .19), 0 6px 10px rgba(0, 0, 0, .23);
 }
 
 .topNavBar-inner
@@ -152,18 +154,72 @@ h6
     color: #9a9da2;
 }
 
-
-.topNavBar  nav  ul  li
+.topNavBar nav > ul > li
 {
+    position: relative;
+
     float: left;
 
     margin: 0 17px;
 }
 
-.topNavBar  nav  ul  li  a
+.topNavBar .submenu
+{
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    display: none;
+
+    color: #3d4451;
+    background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+@keyframes slideMargin
+{
+    0%
+    {
+        margin-right: 100%;
+        opacity: 0;
+    }
+    100%
+    {
+        margin-right: 0;
+        opacity: 1;
+    }
+}
+
+.topNavBar li.active .submenu
+{
+    display: block;
+	
+    animation: slideMargin .2s linear;
+}
+
+.topNavBar .submenu li>a
+{
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: normal;
+    white-space: nowrap;
+
+}
+
+.topNavBar .submenu li>a:hover {
+	color: 	#e8676b;
+	background-color: #fafafa;
+	cursor: pointer;
+}
+
+
+
+.topNavBar nav ul > li > a
 {
     font-size: 14px;
     font-weight: bold;
+
+    position: relative;
 
     display: block;
 
@@ -172,29 +228,36 @@ h6
 
     color: inherit;
     border-bottom: 3px solid transparent;
-    position: relative;
 }
 
-.topNavBar  nav  ul  li  a:hover::after {
-	position: absolute;
-	content: '';
-	display: block;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	background: #e06567;
-	height: 3px;
-	animation: lineSlide .2s;
+.topNavBar nav ul > li.active > a::after
+{
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 3px;
+
+    content: '';
+    animation: lineSlide .2s;
+
+    background: #e06567;
 }
 
-@keyframes lineSlide {
-	0% {
-		width: 0;
-	}
-	100%{
-		width: 100%;
-	}
-} 
+@keyframes lineSlide
+{
+    0%
+    {
+        width: 0;
+    }
+    100%
+    {
+        width: 100%;
+    }
+}
 
 .userCard
 {
@@ -326,6 +389,7 @@ body > main .downloadResume-wrapper
 {
     text-align: center;
 }
+
 body > main .downloadResume
 {
     font-size: 14px;
@@ -360,7 +424,8 @@ body > main .downloadResume:hover
     margin-right: auto;
     margin-left: auto;
 
-    text-align: center;;
+    text-align: center;
+    ;
 }
 
 section.skills,
