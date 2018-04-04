@@ -34,7 +34,17 @@ h6
     font-weight: normal;
 }
 
-.siteWelcome
+[data-x].offset{
+  transform: translateY(100px);
+}
+[data-x]{
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+
+
+/* 加载动画 */
+/* .siteWelcome
 {
     position: fixed;
     z-index: 2;
@@ -49,14 +59,13 @@ h6
     background: white;
 
     justify-content: center;
-    -ms-align-items: center;
         align-items: center;
 }
 
 .siteWelcome.active
 {
     display: flex;
-}
+} */
 
 .icon
 {
@@ -230,7 +239,8 @@ h6
     border-bottom: 3px solid transparent;
 }
 
-.topNavBar nav ul > li.active > a::after
+.topNavBar nav ul > li.active > a::after,
+.topNavBar nav > ul > li.highlight > a::after
 {
     position: absolute;
     top: 100%;

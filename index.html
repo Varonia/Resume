@@ -6,45 +6,47 @@
     <link rel="stylesheet" href="./main.css">
     <script src="//at.alicdn.com/t/font_584946_dxln77t6o7sqbyb9.js"></script>
     <style>
-        .loading:before,
-        .loading:after {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            margin: auto;
-            content: '';
-            animation: ripple 1.6s linear infinite;
-            border-radius: 50%;
-            background: #3d4451;
-        }
-        
-        .loading:after {
-            animation-delay: .8s;
-        }
-        
-        @keyframes ripple {
-            0% {
-                width: 0;
-                height: 0;
-                opacity: 1;
-            }
-            100% {
-                width: 70px;
-                height: 70px;
-                opacity: 0;
-            }
-        }
+        /*加载动画css*/
+        /*	.loading:before,
+	.loading:after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		margin: auto;
+		content: '';
+		animation: ripple 1.6s linear infinite;
+		border-radius: 50%;
+		background: #3d4451;
+	}
+
+	.loading:after {
+		animation-delay: .8s;
+	}
+
+	@keyframes ripple {
+		0% {
+			width: 0;
+			height: 0;
+			opacity: 1;
+		}
+		100% {
+			width: 70px;
+			height: 70px;
+			opacity: 0;
+		}
+		}*/
     </style>
 </head>
 
 <body>
-    <div id="siteWelcome" class="siteWelcome active">
+    <!-- 加载动画 -->
+    <!--     <div id="siteWelcome" class="siteWelcome active">
         <div class="loading"></div>
-    </div>
+    </div> -->
     <div id="topNavBar" class="topNavBar">
         <div class="topNavBar-inner clearfix">
             <a class="logo" href="#" alt="logo">
@@ -91,7 +93,7 @@
         <div class="mask"></div>
     </div>
     <main>
-        <div id="siteAbout" class="userCard">
+        <div data-x id="siteAbout" class="userCard">
             <div class="pictureAndText clearfix">
                 <div class="picture">
                     <img src="./img/avatar.jpg" alt="头像">
@@ -99,7 +101,7 @@
                 <div class="text">
                     <div class="profile">
                         <span class="welcome">Hello
-							<span class="triangle"></span>
+    						<span class="triangle"></span>
                         </span>
                         <h1>王峥</h1>
                         <p>前端开发工程师</p>
@@ -120,28 +122,28 @@
             <footer class="media">
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-						<use xlink:href="#icon-hexo"></use>
-					</svg>
+    					<use xlink:href="#icon-hexo"></use>
+    				</svg>
                 </a>
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-						<use xlink:href="#icon-github"></use>
-					</svg>
+    					<use xlink:href="#icon-github"></use>
+    				</svg>
                 </a>
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-						<use xlink:href="#icon-weibo1"></use>
-					</svg>
+    					<use xlink:href="#icon-weibo1"></use>
+    				</svg>
                 </a>
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-						<use xlink:href="#icon-zhihu0"></use>
-					</svg>
+    					<use xlink:href="#icon-zhihu0"></use>
+    				</svg>
                 </a>
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-						<use xlink:href="#icon-twitter"></use>
-					</svg>
+    					<use xlink:href="#icon-twitter"></use>
+    				</svg>
                 </a>
             </footer>
         </div>
@@ -153,7 +155,7 @@
         </p>
 
     </main>
-    <section id="siteSkill" class="skills">
+    <section data-x id="siteSkill" class="skills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -206,7 +208,7 @@
             </li>
         </ol>
     </section>
-    <section id="siteWorks" class="portfolio">
+    <section data-x id="siteWorks" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -245,9 +247,17 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
     <script>
-        setTimeout(function() {
-            siteWelcome.classList.remove("active")
-        }, 1500)
+        let specialTags = document.querySelectorAll('[data-x]')
+        for (let i = 0; i < specialTags.length; i++) {
+            specialTags[i].classList.add('offset')
+        }
+
+        findClosest()
+
+        // 加载动画用
+        // setTimeout(function() {
+        // 	siteWelcome.classList.remove("active")
+        // }, 1500)
 
         window.onscroll = function() {
             if (window.scrollY > 0) {
@@ -255,9 +265,31 @@
             } else {
                 topNavBar.classList.remove("sticky")
             }
+            findClosest()
+        }
+
+        function findClosest() {
+            let specialTags = document.querySelectorAll('[data-x]')
+            let minIndex = 0
+            for (let i = 1; i < specialTags.length; i++) {
+                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+                    minIndex = i
+                }
+            }
+            // minIndex 就是里窗口顶部最近的元素
+            specialTags[minIndex].classList.remove('offset')
+            let id = specialTags[minIndex].id
+            let a = document.querySelector('a[href="#' + id + '"]')
+            let li = a.parentNode
+            let brothersAndMe = li.parentNode.children
+            for (let i = 0; i < brothersAndMe.length; i++) {
+                brothersAndMe[i].classList.remove('highlight')
+            }
+            li.classList.add('highlight')
         }
 
         let liTags = document.querySelectorAll('nav.menu > ul >li')
+
         for (let i = 0; i < liTags.length; i++) {
             liTags[i].onmouseenter = function(x) {
                 x.currentTarget.classList.add('active')
@@ -273,6 +305,7 @@
             requestAnimationFrame(animate);
             TWEEN.update(time);
         }
+
         requestAnimationFrame(animate);
 
         for (let i = 0; i < aTags.length; i++) {
