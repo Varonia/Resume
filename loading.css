@@ -1,0 +1,63 @@
+/* html结构 */
+    <!-- 加载动画 -->
+    <div id="siteWelcome" class="siteWelcome active">
+        <div class="loading"></div>
+    </div>
+
+/* 加载动画 */
+.siteWelcome
+{
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+
+	display: none;
+
+	width: 100%;
+	height: 100%;
+
+	background: white;
+
+	justify-content: center;
+	align-items: center;
+}
+
+.siteWelcome.active
+{
+	display: flex;
+}
+
+/*加载动画css*/
+.loading:before,
+.loading:after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	margin: auto;
+	content: '';
+	animation: ripple 1.6s linear infinite;
+	border-radius: 50%;
+	background: #3d4451;
+}
+
+.loading:after {
+	animation-delay: .8s;
+}
+
+@keyframes ripple {
+	0% {
+		width: 0;
+		height: 0;
+		opacity: 1;
+	}
+	100% {
+		width: 70px;
+		height: 70px;
+		opacity: 0;
+	}
+}
