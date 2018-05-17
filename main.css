@@ -42,31 +42,6 @@ h6
   transition: all 0.5s;
 }
 
-
-/* 加载动画 */
-/* .siteWelcome
-{
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-
-    display: none;
-
-    width: 100%;
-    height: 100%;
-
-    background: white;
-
-    justify-content: center;
-        align-items: center;
-}
-
-.siteWelcome.active
-{
-    display: flex;
-} */
-
 .icon
 {
     overflow: hidden;
@@ -426,7 +401,7 @@ body > main .downloadResume:hover
 
 .intro
 {
-    font-family: 'KaiTi';
+    font-family: 'Microsoft YaHei';
     font-size: 18px;
     line-height: 1.8;
 
@@ -435,7 +410,6 @@ body > main .downloadResume:hover
     margin-left: auto;
 
     text-align: center;
-    ;
 }
 
 section.skills,
@@ -509,93 +483,23 @@ section.skills .progressBar > .progress
 section.portfolio
 {
     margin-bottom: 100px;
-
+    
     text-align: center;
 }
 
-section.portfolio > nav
-{
-    text-align: center;
+section.portfolio h2 {
+    margin-bottom: 32px;
 }
 
-section.portfolio > nav > ol
-{
-    display: inline-block;
-
-    margin: 0 auto;
-    margin-bottom: 10px;
-
-    vertical-align: top;
-}
-
-section.portfolio > nav > ol > li
-{
-    float: left;
-
-    margin-left: 40px;
-
-    cursor: pointer;
-}
-
-section.portfolio > nav > ol > li:first-child
-{
-    margin-left: 10px;
-}
-
-section.portfolio > nav
-{
-    display: inline-block;
-
-    margin-top: 32px;
-
-    vertical-align: top;
-}
-
-section.portfolio > nav .bar
-{
-    height: 5px;
-    margin-top: 5px;
-    margin-bottom: 28px;
-
-    border-radius: 2px;
-    background: white;
-}
-
-section.portfolio > nav .bar-inner
-{
-    height: 100%;
-
-    transition: all .3s;
-
-    border-radius: 2px;
-    background: #e6686a;
-}
-
-section.portfolio > nav .bar.state-1 .bar-inner
-{
-    width: 50px;
-    margin-left: 0;
-}
-
-section.portfolio > nav .bar.state-2 .bar-inner
-{
-    width: 60px;
-    margin-left: 67px;
-}
-
-section.portfolio > nav .bar.state-3 .bar-inner
-{
-    width: 96px;
-    margin-left: 148px;
-}
-
-section.portfolio .works
-{
-    position: relative;
-}
-
-section.portfolio .works > .big,
-section.portfolio .works > .small
-{
-    position: absolute;
+section.portfolio .swiper-container { width: 668px; height: 501px; }
+section.portfolio .swiper-button-prev, 
+section.portfolio .swiper-button-next{
+  background-color: white;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  }
+  section.portfolio .swiper-button-prev, 
+section.portfolio .swiper-button-next:focus{
+    outline: none;
 }
