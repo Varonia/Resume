@@ -1,26 +1,20 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
 }
 
-body
-{
+body {
     margin: 0;
-
     background-color: #efefef;
 }
 
-a
-{
+a {
     text-decoration: none;
-
     color: inherit;
 }
 
 ul,
-ol
-{
+ol {
     list-style: none;
 }
 
@@ -29,398 +23,294 @@ h2,
 h3,
 h4,
 h5,
-h6
-{
+h6 {
     font-weight: normal;
 }
 
-[data-x].offset
-{
-    transform: translateY(200px);
+[data-x].offset {
+    transform: translateY(100px);
 }
 
-[data-x]
-{
+[data-x] {
     transition: all .5s;
     transform: translateY(0);
 }
 
-.icon
-{
+.icon {
     overflow: hidden;
-
     width: 1em;
     height: 1em;
-
     vertical-align: -.15em;
-
     fill: currentColor;
 }
 
-.clearfix::after
-{
+.clearfix::after {
     display: block;
     clear: both;
-
     content: '';
 }
 
-.banner
-{
+.banner {
     height: 515px;
-
     background-image: url(./img/banner.jpg);
     background-position: center center;
     background-size: cover;
 }
 
-.banner .mask
-{
+.banner .mask {
     height: 515px;
-
     background-color: rgba(0, 0, 0, .4);
 }
 
-.topNavBar
-{
+.topNavBar {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     padding: 20px 0;
-
     transition: all .3s linear;
-
     color: #b7b7b7;
 }
 
-.topNavBar.sticky
-{
+.topNavBar.sticky {
     z-index: 1;
-
     padding: 10px 0;
-
     color: #3d4451;
     background: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .19), 0 6px 10px rgba(0, 0, 0, .23);
 }
 
-.topNavBar-inner
-{
+.topNavBar-inner {
     padding: 0 16px;
 }
 
-.topNavBar nav
-{
+.topNavBar nav {
     float: right;
-
     padding-top: 4px;
 }
 
-.topNavBar .logo
-{
+.topNavBar .logo {
     font-family: 'Arial Black';
     font-size: 24px;
-
     float: left;
-
     padding-top: 4px;
     padding-bottom: 4px;
 }
 
-.topNavBar .logo .rs
-{
+.topNavBar .logo .rs {
     margin-right: 8px;
-
     color: #e6686a;
 }
 
-.topNavBar .logo .card
-{
+.topNavBar .logo .card {
     color: #9a9da2;
 }
 
-.topNavBar nav > ul > li
-{
+.topNavBar nav>ul>li {
     position: relative;
-
     float: left;
-
     margin: 0 17px;
 }
 
-.topNavBar .submenu
-{
+.topNavBar .submenu {
     position: absolute;
     top: 100%;
     right: 0;
-
     display: none;
-
     color: #3d4451;
     background: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 }
 
-@keyframes slideMargin
-{
-    0%
-    {
+@keyframes slideMargin {
+    0% {
         margin-right: 100%;
-
         opacity: 0;
     }
-    100%
-    {
+    100% {
         margin-right: 0;
-
         opacity: 1;
     }
 }
 
-.topNavBar li.active .submenu
-{
+.topNavBar li.active .submenu {
     display: block;
-
     animation: slideMargin .2s linear;
 }
 
-.topNavBar .submenu li > a
-{
+.topNavBar .submenu li>a {
     font-size: 14px;
     font-weight: normal;
-
     padding: 10px 30px;
-
     white-space: nowrap;
 }
 
-.topNavBar .submenu li > a:hover
-{
+.topNavBar .submenu li>a:hover {
     cursor: pointer;
-
     color: #e8676b;
     background-color: #fafafa;
 }
 
-.topNavBar nav ul > li > a
-{
+.topNavBar nav ul>li>a {
     font-size: 14px;
     font-weight: bold;
-
     position: relative;
-
     display: block;
-
     padding-top: 5px;
     padding-bottom: 5px;
-
     color: inherit;
     border-bottom: 3px solid transparent;
 }
 
-.topNavBar nav ul > li.active > a::after,
-.topNavBar nav > ul > li.highlight > a::after
-{
+.topNavBar nav ul>li.active>a::after,
+.topNavBar nav>ul>li.highlight>a::after {
     position: absolute;
     top: 100%;
     left: 0;
-
     display: block;
-
     width: 100%;
     height: 3px;
-
     content: '';
     animation: lineSlide .2s;
-
     background: #e06567;
 }
 
-@keyframes lineSlide
-{
-    0%
-    {
+@keyframes lineSlide {
+    0% {
         width: 0;
     }
-    100%
-    {
+    100% {
         width: 100%;
     }
 }
 
-.userCard
-{
+.userCard {
     max-width: 940px;
     margin-top: -340px;
     margin-right: auto;
     margin-left: auto;
-
     background-color: #fff;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .3);
 }
 
-.userCard .picture
-{
+.userCard .picture {
     float: left;
 }
 
-.userCard .text
-{
+.userCard .text {
     float: left;
-
     width: 470px;
     margin-left: 65px;
 }
 
-.userCard .welcome
-{
+.userCard .welcome {
     line-height: 22px;
-
     position: relative;
-
     display: inline-block;
-
     margin-bottom: 10px;
     padding: 4px 16px;
-
     color: white;
     background: #e6686a;
 }
 
-.userCard .welcome .triangle
-{
+.userCard .welcome .triangle {
     position: absolute;
     top: 100%;
     left: 4px;
-
     display: block;
-
     width: 0;
-
     border: 10px solid transparent;
     border-top-width: 0;
     border-left-color: #e6686a;
 }
 
-.userCard .text h1
-{
+.userCard .text h1 {
     margin-top: 18px;
 }
 
-.userCard .text hr
-{
+.userCard .text hr {
     margin: 20px 0;
 }
 
-.userCard .pictureAndText
-{
+.userCard .pictureAndText {
     padding: 50px;
 }
 
 .userCard dl dt,
-.userCard dl dd
-{
+.userCard dl dd {
     float: left;
-
     padding: 10px 0;
 }
 
-.userCard dl dt
-{
+.userCard dl dt {
     font-weight: bold;
-
     width: 30%;
 }
 
-.userCard dl dd
-{
+.userCard dl dd {
     width: 70%;
-
     color: #9da0a7;
 }
 
-.userCard > footer.media
-{
+.userCard>footer.media {
     text-align: center;
-
     background: #e6686a;
 }
 
-.userCard > footer.media > a
-{
+.userCard>footer.media>a {
     line-height: 30px;
-
     display: inline-block;
-
     width: 40px;
     margin: 16px;
     padding: 5px 0;
-
     border-radius: 50%;
 }
 
-.userCard > footer.media > a:hover
-{
+.userCard>footer.media>a:hover {
     background: #cf5d5f;
 }
 
-.userCard svg
-{
+.userCard svg {
     width: 30px;
     height: 30px;
-
     vertical-align: top;
-
     fill: white;
 }
 
-body > main .downloadResume-wrapper
-{
+body>main .downloadResume-wrapper {
     text-align: center;
 }
 
-body > main .downloadResume
-{
+body>main .downloadResume {
     font-size: 14px;
     font-weight: bold;
     line-height: 16px;
-
     display: inline-block;
-
     margin: 32px 0;
     padding: 21px 55px;
-
     transition: box-shadow .3s;
-
     color: #3d4451;
     border: 1px solid #cdcfd1;
     border-radius: 4px;
     background: #efefef;
 }
 
-body > main .downloadResume:hover
-{
+body>main .downloadResume:hover {
     box-shadow: 0 4px 13px 0 rgba(0, 0, 0, .2);
 }
 
-.intro
-{
+.intro {
     font-family: 'Microsoft YaHei';
     font-size: 18px;
     line-height: 1.8;
-
     max-width: 940px;
     margin-right: auto;
     margin-left: auto;
-
     text-align: center;
 }
 
 section.skills,
-section.portfolio
-{
+section.portfolio {
     max-width: 940px;
     margin-top: 60px;
     margin-right: auto;
@@ -428,111 +318,85 @@ section.portfolio
 }
 
 section.skills h2,
-section.portfolio h2
-{
+section.message h2,
+section.portfolio h2 {
     font-size: 34px;
     font-weight: 600;
     line-height: 1.2;
-
     text-align: center;
-
     color: #3d4451;
 }
 
-section.skills h3
-{
+section.skills h3 {
     font-size: 14px;
     line-height: 1.1;
-
     padding-right: 40px;
 }
 
-section.skills ol
-{
+section.skills ol {
     margin: 30px 0;
     padding: 42px 50px 10px;
-
     background-color: #fff;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .3);
 }
 
-section.skills ol li
-{
+section.skills ol li {
     float: left;
-
     box-sizing: border-box;
     width: 48%;
 }
 
-section.skills ol li:nth-child(even)
-{
+section.skills ol li:nth-child(even) {
     float: right;
 }
 
-section.skills .progressBar
-{
+section.skills .progressBar {
     height: 5px;
     margin: 4px 0 40px;
-
     border-radius: 3px;
     background: #fae1e1;
 }
 
-section.skills .progressBar > .progress
-{
+section.skills .progressBar>.progress {
     height: 100%;
-
     border-radius: 2px;
     background: #e6686a;
 }
 
-section.portfolio
-{
+section.portfolio {
     margin-bottom: 100px;
-
     text-align: center;
 }
 
-section.portfolio h2
-{
+section.portfolio h2 {
     margin-bottom: 32px;
 }
 
-section.portfolio .swiper-container
-{
+section.portfolio .swiper-container {
     width: 668px;
     height: 501px;
 }
 
 section.portfolio .swiper-button-prev,
-section.portfolio .swiper-button-next
-{
+section.portfolio .swiper-button-next {
     width: 64px;
     height: 64px;
-
     border-radius: 50%;
     background-color: white;
 }
 
 section.portfolio .swiper-button-prev,
-section.portfolio .swiper-button-next:focus
-{
+section.portfolio .swiper-button-next:focus {
     outline: none;
 }
 
-section.message {
-    text-align: center;
-}
-section.message > ol
-{
+section.message>ol {
     max-width: 700px;
     margin: 0 auto;
-
     border-top: 1px solid #ddd;
 }
-section.message > ol > li
-{
-    padding: 16px;
 
+section.message>ol>li {
+    padding: 16px;
     border-bottom: 1px solid #ddd;
 }
