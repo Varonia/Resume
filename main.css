@@ -82,10 +82,16 @@ h6 {
 
 .topNavBar-inner {
     padding: 0 16px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .topNavBar nav {
-    float: right;
     padding-top: 4px;
 }
 
@@ -100,10 +106,6 @@ h6 {
 .topNavBar .logo .rs {
     margin-right: 8px;
     color: #e6686a;
-}
-
-.topNavBar .logo .card {
-    color: #9a9da2;
 }
 
 .topNavBar nav>ul>li {
@@ -225,7 +227,8 @@ h6 {
 }
 
 .userCard .text h1 {
-    margin-top: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .userCard .text hr {
@@ -299,20 +302,10 @@ body>main .downloadResume:hover {
     box-shadow: 0 4px 13px 0 rgba(0, 0, 0, .2);
 }
 
-.intro {
-    font-family: 'Microsoft YaHei';
-    font-size: 18px;
-    line-height: 1.8;
-    max-width: 940px;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-}
-
 section.skills,
 section.portfolio {
     max-width: 940px;
-    margin-top: 60px;
+    margin-top: 20px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -364,6 +357,7 @@ section.skills .progressBar>.progress {
 }
 
 section.portfolio {
+    margin-top: 20px;
     margin-bottom: 100px;
     text-align: center;
 }
