@@ -371,6 +371,10 @@ section.portfolio .swiper-container {
     height: 501px;
 }
 
+section.portfolio .swiper-container a {
+    display: block;
+}
+
 section.portfolio .swiper-button-prev,
 section.portfolio .swiper-button-next {
     width: 64px;
